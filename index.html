@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New topics in HTML</title>
+</head>
+
+<body>
+
+
+    <h3>Input with datalist : languages</h3>
+    <input list="languages" id="lang-choice">
+
+    <datalist id="languages">
+        <option value="javascript"></option>
+        <option value="java"></option>
+        <option value="php"></option>
+        <option value="node"></option>
+        <option value="go"></option>
+    </datalist>
+
+    <h3>Input with datalist : time</h3>
+    <input type="time" list="popularHours">
+    <datalist id="popularHours">
+        <option value="12:00"></option>
+        <option value="13:00"></option>
+        <option value="14:00"></option>
+    </datalist>
+
+    <h3>Dialogo</h3>
+    <dialog>
+        <button autofocus>Close</button>
+        <p>Hi people...</p>
+    </dialog>
+    <button>Show the dialog</button>
+
+    <script>
+        const dialog = document.querySelector("dialog");
+        const showButton = document.querySelector("dialog + button");
+        const closeButton = document.querySelector("dialog button");
+
+        showButton.addEventListener("click", () => { dialog.showModal(); });
+        closeButton.addEventListener("click", () => { dialog.close(); });
+    </script>
+
+    <h3>Details</h3>
+    <details>
+        <summary>More details</summary>
+        This is a details about main details
+    </details>
+
+    <h3>Popover</h3>
+    <button popovertarget="my-popover">Open Popover</button>
+    <div popover id="my-popover">Hi folks.. I hope you enjoy this day ...</div>
+
+    <h3>Form of search</h3>
+    <header>
+        <h4>My films site</h4>
+        <search>
+            <form action="./search/">
+                <label for="movie">Sarch movie</label>
+                <input type="search" id="movie" name="qst" />
+                <button type="submit">Search</button>
+            </form>
+        </search>
+
+    </header>
+</body>
+
+</html>
